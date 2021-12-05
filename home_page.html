@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home Page Memory Game</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+  <section class="login">
+    <div class="login_box">
+      <div class="left">
+        <div class="contact">
+          <form>
+            <h3>SIGN IN</h3>
+            <label for="player1Name">Player 1: </label>
+            <input type="text" placeholder="Player 1" id="player1Name">
+            <label for="player2Name">Player 2: </label>
+            <input type="text" placeholder="Player 2" id="player2Name">
+          </form>
+        </div>
+      </div>
+
+      <div class="submit">
+        <a href="memory_game4x4.html">
+          <button class="submit1" onclick="setPlayers('8')">Submit 4 x 4</button>
+        </a>
+        <a href="memory_game5x5.html">
+          <button class="submit2" onclick="setPlayers('12')">Submit 5 x 5</button>
+        </a>
+      </div>
+      <div class="right">
+        <img src="/assets/head_logo.png" width="400px" height="285px" />
+      </div>
+  </section>
+
+
+
+  <script>
+    var data = {};
+    var json;
+
+    function setPlayers(size) {
+      localStorage.setItem("player1", document.getElementById("player1Name").value);
+      localStorage.setItem("player2", document.getElementById("player2Name").value);
+      localStorage.setItem("size", size);
+
+      data = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : {};
+
+      json = JSON.stringify(data);
+      localStorage.setItem("data", json);
+    }
+  </script>
+
+  <script src="./index.js"></script>
+
+</body>
+
+</html>
