@@ -14,7 +14,9 @@ var player2Score = 0;
 
 var player1 = "";
 var player2 = "";
-var size = localStorage.getItem("size");;
+var size = localStorage.getItem("size");
+
+document.getElementById("LBL_player1").style.color = "rgb(235, 194, 12)";
 
 function flipCard() {
     if (lockBoard) return;
@@ -32,11 +34,13 @@ function flipCard() {
 
     checkForMatch();
     updateTurn();
+
 }
 
 function checkForMatch() {
     var isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
     isMatch ? disableCards() : unflipCards();
+    return isMatch;
 }
 
 function disableCards() {

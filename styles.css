@@ -180,18 +180,7 @@ button {
 }
 
 .left {
-    background: black;
-}
-
-.submit1 {
-    border: none;
-    padding: 15px 70px;
-    border-radius: 8px;
-    display: block;
-    margin-top: 240px;
-    background: rgb(196, 156, 104);
-    color: #fff;
-    font-weight: bold;
+    background: rgb(0, 0, 0);
 }
 
 .submit2 {
